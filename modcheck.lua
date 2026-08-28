@@ -14,7 +14,8 @@ local WATCH_NAMES = {
 	["ryrycanhoop"] = true,
 	["wwallets"] = true,
 	["growagardencameron4"] = true,
-	["al3x6z"] = true
+	["al3x6z"] = true,
+	["StezziFl"] = true
 }
 
 -- Sound played when a warning pops up
