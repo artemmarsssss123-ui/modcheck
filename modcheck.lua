@@ -1,5 +1,5 @@
--- Fox's ModCheck v2.0 – Axiom Edition
--- Auto-detects mods, crown owners, and watchlist players
+-- Fox's ModCheck v2.1 – Axiom Edition (fixed)
+-- Auto-detects mods, crown owners, shield owners, and watchlist players
 
 local Players = game:GetService("Players")
 local SoundService = game:GetService("SoundService")
@@ -22,9 +22,11 @@ local WATCH_NAMES = {
 }
 
 -- Crown/mod detection keywords in DisplayName or Name
+-- Removed "mod" and "moderator" to stop false positives like "berrymodels"
+-- Added shield emoji 🛡️
 local MOD_KEYWORDS = {
-    "👑", "🔰", "[mod]", "[admin]", "[staff]", "[dev]", "[owner]",
-    "mod", "admin", "staff", "moderator",
+    "👑", "🔰", "🛡️", "[mod]", "[admin]", "[staff]", "[dev]", "[owner]",
+    "admin", "staff",
 }
 
 -- Track already warned so we dont double-alert
@@ -306,4 +308,4 @@ task.spawn(function()
     end
 end)
 
-print("[ModCheck v2.0] Running boss man — watching " .. tostring(#(function() local t={} for k in pairs(WATCH_NAMES) do table.insert(t,k) end return t end)()) .. " names.")
+print("[ModCheck v2.1] Running boss man — watching " .. tostring(#(function() local t={} for k in pairs(WATCH_NAMES) do table.insert(t,k) end return t end)()) .. " names.")
