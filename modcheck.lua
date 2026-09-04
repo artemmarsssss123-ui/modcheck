@@ -25,8 +25,7 @@ local WATCH_NAMES = {
 -- Removed "mod" and "moderator" to stop false positives like "berrymodels"
 -- Added shield emoji 🛡️
 local MOD_KEYWORDS = {
-    "👑", "🔰", "🛡️", "[mod]", "[admin]", "[staff]", "[dev]", "[owner]",
-    "admin", "staff",
+    "👑", "🔰", "🛡️",
 }
 
 -- Track already warned so we dont double-alert
